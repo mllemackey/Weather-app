@@ -38,7 +38,7 @@ The tests for class `WeatherData` are verifying the return value with different 
 ## Running the Application
 
 To run the application execute `./bin/weather CITYNAME` where CITYNAME should be replaced with actual city name.
-Weather conditions and current temperature in London should be printed.
+Weather conditions and current temperature in entered city should be printed.
 
 ```
 $: ./bin/weather London
