@@ -3,7 +3,7 @@
 **PHP-based command line app** which prints the current weather of any city which you specify as argument.
 
 
-## Getting Started
+## Requirements
 
 PHP 8 or above and Composer is expected to be installed on our system.
 
@@ -37,8 +37,7 @@ The tests for class `WeatherData` are verifying the return value with different 
 
 ## Running the Application
 
-To run the application execute `./bin/weather CITYNAME` where CITYNAME should be replaced with actual city name.
-Weather conditions and current temperature in entered city should be printed.
+To run the application execute `./bin/weather CITYNAME` where CITYNAME should be replaced with actual city name. In case city name contains multiple words, please use quotes around city name. Weather conditions and current temperature in entered city should be printed.
 
 ```
 $: ./bin/weather London
