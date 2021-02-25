@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+use GuzzleHttp\Exception\ClientException;
+use Weather\WeatherData;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$config = require __DIR__ . '/../config/config.php';
+
+/* Check if city name is entered correctly */
+if ($argc > 2) {
+    echo 'Please enter only one city name' . PHP_EOL;
+    exit;
+} elseif ($argc < 2) {
+    echo 'Please enter city name' . PHP_EOL;
+    exit;
+}
+
+$weather = new WeatherData($config['api_key'], $config['base_url']);
+
+try {
+    echo $weather->getCurrentWeatherAndTemperatureByCityName($argv[1]);
+} catch (ClientException $exception) {
+    echo ucfirst(json_decode($exception->getResponse()->getBody(), true)['message']) . PHP_EOL;
+} catch (Exception $exception) {
+    echo 'Something went wrong' . PHP_EOL;
+}
